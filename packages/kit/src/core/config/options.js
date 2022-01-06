@@ -113,7 +113,8 @@ const options = object(
 					}
 
 					return input;
-				})
+				}),
+				appBase: string('/')
 			}),
 
 			prerender: object({

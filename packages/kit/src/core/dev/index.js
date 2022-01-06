@@ -79,7 +79,7 @@ export async function dev({ cwd, port, host, https, config }) {
 			create_plugin(config, output, cwd, config.kit.amp && (await amp_validator.getInstance()))
 		],
 		publicDir: config.kit.files.assets,
-		base: '/'
+		base: config.kit.paths.appBase
 	});
 
 	print_config_conflicts(conflicts, 'kit.vite.');

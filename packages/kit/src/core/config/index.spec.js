@@ -43,6 +43,7 @@ test('fills in defaults', () => {
 				register: true
 			},
 			paths: {
+				appBase: '/',
 				base: '',
 				assets: ''
 			},
@@ -150,6 +151,7 @@ test('fills in partial blanks', () => {
 				register: true
 			},
 			paths: {
+				appBase: '/',
 				base: '',
 				assets: ''
 			},
@@ -273,8 +275,8 @@ test('fails if prerender.entries are invalid', () => {
 
 /**
  * @param {string} name
- * @param {{ base?: string, assets?: string }} input
- * @param {{ base?: string, assets?: string }} output
+ * @param {{ appBase?: string, base?: string, assets?: string }} input
+ * @param {{ appBase?: string, base?: string, assets?: string }} output
  */
 function validate_paths(name, input, output) {
 	test(name, () => {
@@ -295,6 +297,7 @@ validate_paths(
 		base: '/path/to/base'
 	},
 	{
+		appBase: '/',
 		base: '/path/to/base',
 		assets: ''
 	}
@@ -306,6 +309,7 @@ validate_paths(
 		assets: 'https://cdn.example.com'
 	},
 	{
+		appBase: '/',
 		base: '',
 		assets: 'https://cdn.example.com'
 	}
@@ -318,6 +322,7 @@ validate_paths(
 		assets: 'https://cdn.example.com'
 	},
 	{
+		appBase: '/',
 		base: '/path/to/base',
 		assets: 'https://cdn.example.com'
 	}

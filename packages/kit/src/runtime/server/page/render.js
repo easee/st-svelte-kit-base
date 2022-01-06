@@ -140,7 +140,7 @@ export async function render_response({
 	} else if (include_js) {
 		// prettier-ignore
 		init = `<script type="module">
-			import { start } from ${s(options.prefix + options.manifest._.entry.file)};
+			import { start } from ${s(options.paths.appBase + options.prefix + options.manifest._.entry.file)};
 			start({
 				target: ${options.target ? `document.querySelector(${s(options.target)})` : 'document.body'},
 				paths: ${s(options.paths)},
@@ -155,7 +155,7 @@ export async function render_response({
 					error: ${serialize_error(error)},
 					nodes: [
 						${(branch || [])
-						.map(({ node }) => `import(${s(options.prefix + node.entry)})`)
+						.map(({ node }) => `import(${s(options.paths.appBase + options.prefix + node.entry)})`)
 						.join(',\n\t\t\t\t\t\t')}
 					],
 					url: new URL(${s(url.href)}),

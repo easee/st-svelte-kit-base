@@ -208,6 +208,7 @@ export function create_plugin(config, output, cwd, amp) {
 								hydrate: config.kit.hydrate,
 								manifest,
 								paths: {
+									appBase: config.kit.paths.appBase,
 									base: config.kit.paths.base,
 									assets: config.kit.paths.assets ? SVELTE_KIT_ASSETS : config.kit.paths.base
 								},

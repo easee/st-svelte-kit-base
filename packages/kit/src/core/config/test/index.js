@@ -47,7 +47,7 @@ async function testLoadDefaultConfig(path) {
 			serviceWorker: {
 				register: true
 			},
-			paths: { base: '', assets: '' },
+			paths: { appBase: '/', base: '', assets: '' },
 			prerender: {
 				concurrency: 1,
 				crawl: true,

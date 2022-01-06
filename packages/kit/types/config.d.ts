@@ -137,6 +137,7 @@ export interface Config {
 		};
 		paths?: {
 			assets?: string;
+			appBase?: string;
 			base?: string;
 		};
 		prerender?: {

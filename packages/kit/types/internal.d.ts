@@ -133,6 +133,7 @@ export interface SSRRenderOptions {
 	hydrate: boolean;
 	manifest: SSRManifest;
 	paths: {
+		appBase: string;
 		base: string;
 		assets: string;
 	};
